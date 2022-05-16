@@ -57,6 +57,9 @@ gem "devise"
 # Use pundit for authorization
 gem "pundit"
 
+# Use rubocop rails to ensure compliance with Ruby/Rails community guidelines
+gem "rubocop-rails", require: false
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
