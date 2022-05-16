@@ -66,10 +66,14 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
+    annotate (3.2.0)
+      activerecord (>= 3.2, < 8.0)
+      rake (>= 10.4, < 14.0)
     bindex (0.8.1)
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     builder (3.2.4)
+    choice (0.2.0)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
     debug (1.5.0)
@@ -148,6 +152,11 @@ GEM
     rails-dom-testing (2.0.3)
       activesupport (>= 4.2.0)
       nokogiri (>= 1.6)
+    rails-erd (1.6.1)
+      activerecord (>= 4.2)
+      activesupport (>= 4.2)
+      choice (~> 0.2.0)
+      ruby-graphviz (~> 1.2)
     rails-html-sanitizer (1.4.2)
       loofah (~> 2.3)
     railties (7.0.3)
@@ -161,6 +170,7 @@ GEM
     redis (4.6.0)
     reline (0.3.1)
       io-console (~> 0.5)
+    rexml (3.2.5)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
     rspec-expectations (3.11.0)
@@ -178,6 +188,8 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.11.0)
+    ruby-graphviz (1.2.5)
+      rexml
     simplecov (0.21.2)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -215,6 +227,7 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  annotate
   bootsnap
   debug
   factory_bot_rails
@@ -223,6 +236,7 @@ DEPENDENCIES
   mysql2 (~> 0.5)
   puma (~> 5.0)
   rails (~> 7.0.3)
+  rails-erd
   redis (~> 4.0)
   rspec-rails
   simplecov
