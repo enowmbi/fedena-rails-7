@@ -49,7 +49,13 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 # Use rails-erd for generating erd for models
- gem "rails-erd"
+gem "rails-erd"
+
+# Use devise for authentication
+gem "devise"
+
+# Use pundit for authorization
+gem "pundit"
 
 
 group :development, :test do
