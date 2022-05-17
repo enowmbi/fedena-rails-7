@@ -9,8 +9,8 @@
   { "config_key" => "EmployeeNumberAutoIncrement", "config_value" => "1" },
   { "config_key" => "TotalSmsCount", "config_value" => "0" },
   { "config_key" => "NetworkState", "config_value" => "Online" },
-  { "config_key" => "FinancialYearStartDate", "config_value" => Date.today },
-  { "config_key" => "FinancialYearEndDate", "config_value" => Date.today + 1.year },
+  { "config_key" => "FinancialYearStartDate", "config_value" => Date.current },
+  { "config_key" => "FinancialYearEndDate", "config_value" => Date.current + 1.year },
   { "config_key" => "AutomaticLeaveReset", "config_value" => "0" },
   { "config_key" => "LeaveResetPeriod", "config_value" => "4" },
   { "config_key" => "LastAutoLeaveReset", "config_value" => nil },
@@ -57,8 +57,17 @@ if User.first(conditions: { admin: true }).blank?
   employee_grade = EmployeeGrade.find_or_create_by_name(name: 'System Admin', priority: 0, status: true,
                                                         max_hours_day: nil, max_hours_week: nil)
 
-  employee = Employee.find_or_create_by_employee_number(employee_number: 'admin', joining_date: Date.today, first_name: 'Admin', last_name: 'User',
-                                                        employee_department_id: employee_department.id, employee_grade_id: employee_grade.id, employee_position_id: employee_position.id, employee_category_id: employee_category.id, status: true, nationality_id: '76', date_of_birth: Date.today - 365, email: 'noreply@fedena.com')
+  employee = Employee.find_or_create_by_employee_number(employee_number: 'admin',
+                                                        joining_date: Date.current,
+                                                        first_name: 'Admin',
+                                                        last_name: 'User',
+                                                        employee_department_id: employee_department.id,
+                                                        employee_grade_id: employee_grade.id,
+                                                        employee_position_id: employee_position.id,
+                                                        employee_category_id: employee_category.id,
+                                                        status: true, nationality_id: '76',
+                                                        date_of_birth: Date.current - 365,
+                                                        email: 'noreply@fedena.com')
 
   employee.user.update(admin: true, employee: false)
 
