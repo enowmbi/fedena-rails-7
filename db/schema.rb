@@ -28,8 +28,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "additional_exam_groups", ["school_id"], name: "index_additional_exam_groups_on_school_id",
-                                                     limit: { "school_id" => nil }
+  add_index "additional_exam_groups", ["school_id"], name: "index_additional_exam_groups_on_school_id"
 
   create_table "additional_exam_scores", force: :cascade do |t|
     t.integer  "student_id"
@@ -43,8 +42,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "additional_exam_scores", ["school_id"], name: "index_additional_exam_scores_on_school_id",
-                                                     limit: { "school_id" => nil }
+  add_index "additional_exam_scores", ["school_id"], name: "index_additional_exam_scores_on_school_id"
 
   create_table "additional_exams", force: :cascade do |t|
     t.integer  "additional_exam_group_id"
@@ -61,8 +59,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "additional_exams", ["school_id"], name: "index_additional_exams_on_school_id",
-                                               limit: { "school_id" => nil }
+  add_index "additional_exams", ["school_id"], name: "index_additional_exams_on_school_id"
 
   create_table "additional_fields", force: :cascade do |t|
     t.string  "name"
@@ -70,8 +67,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "additional_fields", ["school_id"], name: "index_additional_fields_on_school_id",
-                                                limit: { "school_id" => nil }
+  add_index "additional_fields", ["school_id"], name: "index_additional_fields_on_school_id"
 
   create_table "applicant_addl_attachments", force: :cascade do |t|
     t.integer  "school_id"
@@ -83,10 +79,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "applicant_addl_attachments", ["applicant_id"],
-            name: "index_applicant_addl_attachments_on_applicant_id", limit: { "applicant_id" => nil }
-  add_index "applicant_addl_attachments", ["school_id"], name: "index_applicant_addl_attachments_on_school_id",
-                                                         limit: { "school_id" => nil }
+  add_index "applicant_addl_attachments", ["applicant_id"], name: "index_applicant_addl_attachments_on_applicant_id"
+  add_index "applicant_addl_attachments", ["school_id"], name: "index_applicant_addl_attachments_on_school_id"
 
   create_table "applicant_addl_field_groups", force: :cascade do |t|
     t.integer  "school_id"
@@ -98,12 +92,10 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "applicant_addl_field_groups", ["is_active"], name: "index_applicant_addl_field_groups_on_is_active",
-                                                          limit: { "is_active" => nil }
+  add_index "applicant_addl_field_groups", ["is_active"], name: "index_applicant_addl_field_groups_on_is_active"
   add_index "applicant_addl_field_groups", ["registration_course_id"],
-            name: "index_applicant_addl_field_groups_on_registration_course_id", limit: { "registration_course_id" => nil }
-  add_index "applicant_addl_field_groups", ["school_id"], name: "index_applicant_addl_field_groups_on_school_id",
-                                                          limit: { "school_id" => nil }
+            name: "index_applicant_addl_field_groups_on_registration_course_id"
+  add_index "applicant_addl_field_groups", ["school_id"], name: "index_applicant_addl_field_groups_on_school_id"
 
   create_table "applicant_addl_field_values", force: :cascade do |t|
     t.integer  "school_id"
@@ -115,9 +107,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "applicant_addl_field_values", ["applicant_addl_field_id"],
-            name: "index_applicant_addl_field_values_on_applicant_addl_field_id", limit: { "applicant_addl_field_id" => nil }
-  add_index "applicant_addl_field_values", ["school_id"], name: "index_applicant_addl_field_values_on_school_id",
-                                                          limit: { "school_id" => nil }
+            name: "index_applicant_addl_field_values_on_applicant_addl_field_id"
+  add_index "applicant_addl_field_values", ["school_id"], name: "index_applicant_addl_field_values_on_school_id"
 
   create_table "applicant_addl_fields", force: :cascade do |t|
     t.integer  "school_id"
@@ -132,9 +123,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "applicant_addl_fields", ["applicant_addl_field_group_id"],
-            name: "index_applicant_addl_fields_on_applicant_addl_field_group_id", limit: { "applicant_addl_field_group_id" => nil }
-  add_index "applicant_addl_fields", ["school_id"], name: "index_applicant_addl_fields_on_school_id",
-                                                    limit: { "school_id" => nil }
+            name: "index_applicant_addl_fields_on_applicant_addl_field_group_id"
+  add_index "applicant_addl_fields", ["school_id"], name: "index_applicant_addl_fields_on_school_id"
 
   create_table "applicant_addl_values", force: :cascade do |t|
     t.integer  "school_id"
@@ -146,11 +136,9 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "applicant_addl_values", ["applicant_addl_field_id"],
-            name: "index_applicant_addl_values_on_applicant_addl_field_id", limit: { "applicant_addl_field_id" => nil }
-  add_index "applicant_addl_values", ["applicant_id"], name: "index_applicant_addl_values_on_applicant_id",
-                                                       limit: { "applicant_id" => nil }
-  add_index "applicant_addl_values", ["school_id"], name: "index_applicant_addl_values_on_school_id",
-                                                    limit: { "school_id" => nil }
+            name: "index_applicant_addl_values_on_applicant_addl_field_id"
+  add_index "applicant_addl_values", ["applicant_id"], name: "index_applicant_addl_values_on_applicant_id"
+  add_index "applicant_addl_values", ["school_id"], name: "index_applicant_addl_values_on_school_id"
 
   create_table "applicant_guardians", force: :cascade do |t|
     t.integer  "school_id"
@@ -175,10 +163,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "applicant_guardians", ["applicant_id"], name: "index_applicant_guardians_on_applicant_id",
-                                                     limit: { "applicant_id" => nil }
-  add_index "applicant_guardians", ["school_id"], name: "index_applicant_guardians_on_school_id",
-                                                  limit: { "school_id" => nil }
+  add_index "applicant_guardians", ["applicant_id"], name: "index_applicant_guardians_on_applicant_id"
+  add_index "applicant_guardians", ["school_id"], name: "index_applicant_guardians_on_school_id"
 
   create_table "applicant_previous_datas", force: :cascade do |t|
     t.integer  "school_id"
@@ -192,10 +178,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "applicant_previous_datas", ["applicant_id"], name: "index_applicant_previous_datas_on_applicant_id",
-                                                          limit: { "applicant_id" => nil }
-  add_index "applicant_previous_datas", ["school_id"], name: "index_applicant_previous_datas_on_school_id",
-                                                       limit: { "school_id" => nil }
+  add_index "applicant_previous_datas", ["applicant_id"], name: "index_applicant_previous_datas_on_applicant_id"
+  add_index "applicant_previous_datas", ["school_id"], name: "index_applicant_previous_datas_on_school_id"
 
   create_table "applicant_registration_settings", force: :cascade do |t|
     t.integer  "school_id"
@@ -206,7 +190,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "applicant_registration_settings", ["school_id"],
-            name: "index_applicant_registration_settings_on_school_id", limit: { "school_id" => nil }
+            name: "index_applicant_registration_settings_on_school_id"
 
   create_table "applicants", force: :cascade do |t|
     t.integer  "school_id"
@@ -238,9 +222,9 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "applicants", ["created_at"], name: "index_applicants_on_created_at", limit: { "created_at" => nil }
-  add_index "applicants", ["school_id"], name: "index_applicants_on_school_id", limit: { "school_id" => nil }
-  add_index "applicants", ["status"], name: "index_applicants_on_status", limit: { "status" => nil }
+  add_index "applicants", ["created_at"], name: "index_applicants_on_created_at"
+  add_index "applicants", ["school_id"], name: "index_applicants_on_school_id"
+  add_index "applicants", ["status"], name: "index_applicants_on_status"
 
   create_table "apply_leaves", force: :cascade do |t|
     t.integer "employee_id"
@@ -255,7 +239,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "apply_leaves", ["school_id"], name: "index_apply_leaves_on_school_id", limit: { "school_id" => nil }
+  add_index "apply_leaves", ["school_id"], name: "index_apply_leaves_on_school_id"
 
   create_table "archived_employee_additional_details", force: :cascade do |t|
     t.integer "employee_id"
@@ -265,7 +249,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "archived_employee_additional_details", ["school_id"],
-            name: "index_archived_employee_additional_details_on_school_id", limit: { "school_id" => nil }
+            name: "index_archived_employee_additional_details_on_school_id"
 
   create_table "archived_employee_bank_details", force: :cascade do |t|
     t.integer "employee_id"
@@ -275,7 +259,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "archived_employee_bank_details", ["school_id"],
-            name: "index_archived_employee_bank_details_on_school_id", limit: { "school_id" => nil }
+            name: "index_archived_employee_bank_details_on_school_id"
 
   create_table "archived_employee_salary_structures", force: :cascade do |t|
     t.integer "employee_id"
@@ -285,7 +269,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "archived_employee_salary_structures", ["school_id"],
-            name: "index_archived_employee_salary_structures_on_school_id", limit: { "school_id" => nil }
+            name: "index_archived_employee_salary_structures_on_school_id"
 
   create_table "archived_employees", force: :cascade do |t|
     t.integer  "employee_category_id"
@@ -343,8 +327,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "archived_employees", ["school_id"], name: "index_archived_employees_on_school_id",
-                                                 limit: { "school_id" => nil }
+  add_index "archived_employees", ["school_id"], name: "index_archived_employees_on_school_id"
 
   create_table "archived_exam_scores", force: :cascade do |t|
     t.integer  "student_id"
@@ -358,10 +341,9 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "archived_exam_scores", ["school_id"], name: "index_archived_exam_scores_on_school_id",
-                                                   limit: { "school_id" => nil }
+  add_index "archived_exam_scores", ["school_id"], name: "index_archived_exam_scores_on_school_id"
   add_index "archived_exam_scores", %w[student_id exam_id],
-            name: "index_archived_exam_scores_on_student_id_and_exam_id", limit: { "student_id" => nil, "exam_id" => nil }
+            name: "index_archived_exam_scores_on_student_id_and_exam_id"
 
   create_table "archived_guardians", force: :cascade do |t|
     t.integer  "ward_id"
@@ -386,8 +368,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "archived_guardians", ["school_id"], name: "index_archived_guardians_on_school_id",
-                                                 limit: { "school_id" => nil }
+  add_index "archived_guardians", ["school_id"], name: "index_archived_guardians_on_school_id"
 
   create_table "archived_students", force: :cascade do |t|
     t.string   "admission_no"
@@ -432,8 +413,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "archived_students", ["school_id"], name: "index_archived_students_on_school_id",
-                                                limit: { "school_id" => nil }
+  add_index "archived_students", ["school_id"], name: "index_archived_students_on_school_id"
 
   create_table "asset_entries", force: :cascade do |t|
     t.text     "dynamic_attributes"
@@ -471,7 +451,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "assets", ["school_id"], name: "index_assets_on_school_id", limit: { "school_id" => nil }
+  add_index "assets", ["school_id"], name: "index_assets_on_school_id"
 
   create_table "assignment_answers", force: :cascade do |t|
     t.integer  "assignment_id"
@@ -526,11 +506,10 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "batch_id"
   end
 
-  add_index "attendances", %w[month_date batch_id], name: "index_attendances_on_month_date_and_batch_id",
-                                                    limit: { "batch_id" => nil, "month_date" => nil }
-  add_index "attendances", ["school_id"], name: "index_attendances_on_school_id", limit: { "school_id" => nil }
-  add_index "attendances", %w[student_id batch_id], name: "index_attendances_on_student_id_and_batch_id",
-                                                    limit: { "batch_id" => nil, "student_id" => nil }
+  add_index "attendances", %w[month_date batch_id], name: "index_attendances_on_month_date_and_batch_id"
+                                                    
+  add_index "attendances", ["school_id"], name: "index_attendances_on_school_id"
+  add_index "attendances", %w[student_id batch_id], name: "index_attendances_on_student_id_and_batch_id"
 
   create_table "bank_fields", force: :cascade do |t|
     t.string  "name"
@@ -538,7 +517,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "bank_fields", ["school_id"], name: "index_bank_fields_on_school_id", limit: { "school_id" => nil }
+  add_index "bank_fields", ["school_id"], name: "index_bank_fields_on_school_id"
 
   create_table "batch_events", force: :cascade do |t|
     t.integer  "event_id"
@@ -548,8 +527,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "batch_events", ["batch_id"], name: "index_batch_events_on_batch_id", limit: { "batch_id" => nil }
-  add_index "batch_events", ["school_id"], name: "index_batch_events_on_school_id", limit: { "school_id" => nil }
+  add_index "batch_events", ["batch_id"], name: "index_batch_events_on_batch_id"
+  add_index "batch_events", ["school_id"], name: "index_batch_events_on_school_id"
 
   create_table "batch_groups", force: :cascade do |t|
     t.integer  "course_id"
@@ -571,9 +550,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "batch_students", %w[batch_id student_id], name: "index_batch_students_on_batch_id_and_student_id",
-                                                       limit: { "batch_id" => nil, "student_id" => nil }
-  add_index "batch_students", ["school_id"], name: "index_batch_students_on_school_id", limit: { "school_id" => nil }
+  add_index "batch_students", %w[batch_id student_id], name: "index_batch_students_on_batch_id_and_student_id"
+  add_index "batch_students", ["school_id"], name: "index_batch_students_on_school_id"
 
   create_table "batches", force: :cascade do |t|
     t.string   "name"
@@ -588,8 +566,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "batches", %w[is_deleted is_active course_id name],
-            name: "index_batches_on_is_deleted_and_is_active_and_course_id_and_name", limit: { "is_active" => nil, "name" => nil, "is_deleted" => nil, "course_id" => nil }
-  add_index "batches", ["school_id"], name: "index_batches_on_school_id", limit: { "school_id" => nil }
+            name: "index_batches_on_is_deleted_and_is_active_and_course_id_and_name"
+  add_index "batches", ["school_id"], name: "index_batches_on_school_id"
 
   create_table "book_movements", force: :cascade do |t|
     t.integer  "user_id"
@@ -641,8 +619,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "class_timings", %w[batch_id start_time end_time],
-            name: "index_class_timings_on_batch_id_and_start_time_and_end_time", limit: { "batch_id" => nil, "end_time" => nil, "start_time" => nil }
-  add_index "class_timings", ["school_id"], name: "index_class_timings_on_school_id", limit: { "school_id" => nil }
+            name: "index_class_timings_on_batch_id_and_start_time_and_end_time"
+  add_index "class_timings", ["school_id"], name: "index_class_timings_on_school_id"
 
   create_table "community_reservations", force: :cascade do |t|
     t.string   "name"
@@ -657,11 +635,9 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "configurations", ["config_key"], name: "index_configurations_on_config_key",
-                                              limit: { "config_key" => "10" }
-  add_index "configurations", ["config_value"], name: "index_configurations_on_config_value",
-                                                limit: { "config_value" => "10" }
-  add_index "configurations", ["school_id"], name: "index_configurations_on_school_id", limit: { "school_id" => nil }
+  add_index "configurations", ["config_key"], name: "index_configurations_on_config_key"
+  add_index "configurations", ["config_value"], name: "index_configurations_on_config_value"
+  add_index "configurations", ["school_id"], name: "index_configurations_on_school_id"
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
@@ -692,7 +668,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "courses", ["school_id"], name: "index_courses_on_school_id", limit: { "school_id" => nil }
+  add_index "courses", ["school_id"], name: "index_courses_on_school_id"
 
   create_table "delayed_jobs", force: :cascade do |t|
     t.integer  "priority",   default: 0
@@ -707,7 +683,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "delayed_jobs", ["locked_by"], name: "index_delayed_jobs_on_locked_by", limit: { "locked_by" => nil }
+  add_index "delayed_jobs", ["locked_by"], name: "index_delayed_jobs_on_locked_by"
 
   create_table "elective_groups", force: :cascade do |t|
     t.string   "name"
@@ -718,8 +694,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "elective_groups", ["school_id"], name: "index_elective_groups_on_school_id",
-                                              limit: { "school_id" => nil }
+  add_index "elective_groups", ["school_id"], name: "index_elective_groups_on_school_id"
 
   create_table "electives", force: :cascade do |t|
     t.integer  "elective_group_id"
@@ -728,7 +703,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "electives", ["school_id"], name: "index_electives_on_school_id", limit: { "school_id" => nil }
+  add_index "electives", ["school_id"], name: "index_electives_on_school_id"
 
   create_table "employee_additional_details", force: :cascade do |t|
     t.integer "employee_id"
@@ -737,8 +712,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_additional_details", ["school_id"], name: "index_employee_additional_details_on_school_id",
-                                                          limit: { "school_id" => nil }
+  add_index "employee_additional_details", ["school_id"], name: "index_employee_additional_details_on_school_id"
 
   create_table "employee_attendances", force: :cascade do |t|
     t.date    "attendance_date"
@@ -749,8 +723,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_attendances", ["school_id"], name: "index_employee_attendances_on_school_id",
-                                                   limit: { "school_id" => nil }
+  add_index "employee_attendances", ["school_id"], name: "index_employee_attendances_on_school_id"
 
   create_table "employee_bank_details", force: :cascade do |t|
     t.integer "employee_id"
@@ -759,8 +732,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_bank_details", ["school_id"], name: "index_employee_bank_details_on_school_id",
-                                                    limit: { "school_id" => nil }
+  add_index "employee_bank_details", ["school_id"], name: "index_employee_bank_details_on_school_id"
 
   create_table "employee_categories", force: :cascade do |t|
     t.string  "name"
@@ -769,8 +741,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_categories", ["school_id"], name: "index_employee_categories_on_school_id",
-                                                  limit: { "school_id" => nil }
+  add_index "employee_categories", ["school_id"], name: "index_employee_categories_on_school_id"
 
   create_table "employee_department_events", force: :cascade do |t|
     t.integer  "event_id"
@@ -780,8 +751,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "employee_department_events", ["school_id"], name: "index_employee_department_events_on_school_id",
-                                                         limit: { "school_id" => nil }
+  add_index "employee_department_events", ["school_id"], name: "index_employee_department_events_on_school_id"
 
   create_table "employee_departments", force: :cascade do |t|
     t.string  "code"
@@ -790,8 +760,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_departments", ["school_id"], name: "index_employee_departments_on_school_id",
-                                                   limit: { "school_id" => nil }
+  add_index "employee_departments", ["school_id"], name: "index_employee_departments_on_school_id"
 
   create_table "employee_grades", force: :cascade do |t|
     t.string  "name"
@@ -802,8 +771,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_grades", ["school_id"], name: "index_employee_grades_on_school_id",
-                                              limit: { "school_id" => nil }
+  add_index "employee_grades", ["school_id"], name: "index_employee_grades_on_school_id"
 
   create_table "employee_leave_types", force: :cascade do |t|
     t.string  "name"
@@ -814,8 +782,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_leave_types", ["school_id"], name: "index_employee_leave_types_on_school_id",
-                                                   limit: { "school_id" => nil }
+  add_index "employee_leave_types", ["school_id"], name: "index_employee_leave_types_on_school_id"
 
   create_table "employee_leaves", force: :cascade do |t|
     t.integer  "employee_id"
@@ -828,8 +795,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "employee_leaves", ["school_id"], name: "index_employee_leaves_on_school_id",
-                                              limit: { "school_id" => nil }
+  add_index "employee_leaves", ["school_id"], name: "index_employee_leaves_on_school_id"
 
   create_table "employee_positions", force: :cascade do |t|
     t.string  "name"
@@ -838,8 +804,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_positions", ["school_id"], name: "index_employee_positions_on_school_id",
-                                                 limit: { "school_id" => nil }
+  add_index "employee_positions", ["school_id"], name: "index_employee_positions_on_school_id"
 
   create_table "employee_salary_structures", force: :cascade do |t|
     t.integer "employee_id"
@@ -848,8 +813,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employee_salary_structures", ["school_id"], name: "index_employee_salary_structures_on_school_id",
-                                                         limit: { "school_id" => nil }
+  add_index "employee_salary_structures", ["school_id"], name: "index_employee_salary_structures_on_school_id"
 
   create_table "employees", force: :cascade do |t|
     t.integer  "employee_category_id"
@@ -907,9 +871,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "employees", ["employee_number"], name: "index_employees_on_employee_number",
-                                              limit: { "employee_number" => "10" }
-  add_index "employees", ["school_id"], name: "index_employees_on_school_id", limit: { "school_id" => nil }
+  add_index "employees", ["employee_number"], name: "index_employees_on_employee_number"
+  add_index "employees", ["school_id"], name: "index_employees_on_school_id"
 
   create_table "employees_subjects", force: :cascade do |t|
     t.integer "employee_id"
@@ -917,10 +880,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "employees_subjects", ["school_id"], name: "index_employees_subjects_on_school_id",
-                                                 limit: { "school_id" => nil }
-  add_index "employees_subjects", ["subject_id"], name: "index_employees_subjects_on_subject_id",
-                                                  limit: { "subject_id" => nil }
+  add_index "employees_subjects", ["school_id"], name: "index_employees_subjects_on_school_id"
+  add_index "employees_subjects", ["subject_id"], name: "index_employees_subjects_on_subject_id"
 
   create_table "events", force: :cascade do |t|
     t.string   "title"
@@ -938,9 +899,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "events", %w[is_common is_holiday is_exam],
-            name: "index_events_on_is_common_and_is_holiday_and_is_exam", limit: { "is_holiday" => nil, "is_common" => nil, "is_exam" => nil }
-  add_index "events", ["school_id"], name: "index_events_on_school_id", limit: { "school_id" => nil }
+  add_index "events", %w[is_common is_holiday is_exam], name: "index_events_on_is_common_and_is_holiday_and_is_exam"
+  add_index "events", ["school_id"], name: "index_events_on_school_id"
 
   create_table "exam_groups", force: :cascade do |t|
     t.string  "name"
@@ -953,7 +913,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.boolean "is_final_exam", default: false, null: false
   end
 
-  add_index "exam_groups", ["school_id"], name: "index_exam_groups_on_school_id", limit: { "school_id" => nil }
+  add_index "exam_groups", ["school_id"], name: "index_exam_groups_on_school_id"
 
   create_table "exam_scores", force: :cascade do |t|
     t.integer  "student_id"
@@ -967,9 +927,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "exam_scores", ["school_id"], name: "index_exam_scores_on_school_id", limit: { "school_id" => nil }
-  add_index "exam_scores", %w[student_id exam_id], name: "index_exam_scores_on_student_id_and_exam_id",
-                                                   limit: { "student_id" => nil, "exam_id" => nil }
+  add_index "exam_scores", ["school_id"], name: "index_exam_scores_on_school_id"
+  add_index "exam_scores", %w[student_id exam_id], name: "index_exam_scores_on_student_id_and_exam_id"
 
   create_table "exams", force: :cascade do |t|
     t.integer  "exam_group_id"
@@ -986,9 +945,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "exams", %w[exam_group_id subject_id], name: "index_exams_on_exam_group_id_and_subject_id",
-                                                   limit: { "exam_group_id" => nil, "subject_id" => nil }
-  add_index "exams", ["school_id"], name: "index_exams_on_school_id", limit: { "school_id" => nil }
+  add_index "exams", %w[exam_group_id subject_id], name: "index_exams_on_exam_group_id_and_subject_id"
+  add_index "exams", ["school_id"], name: "index_exams_on_school_id"
 
   create_table "fee_collection_discounts", force: :cascade do |t|
     t.string   "type"
@@ -1002,8 +960,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "fee_collection_discounts", ["school_id"], name: "index_fee_collection_discounts_on_school_id",
-                                                       limit: { "school_id" => nil }
+  add_index "fee_collection_discounts", ["school_id"], name: "index_fee_collection_discounts_on_school_id"
 
   create_table "fee_collection_particulars", force: :cascade do |t|
     t.string   "name"
@@ -1019,8 +976,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "fee_collection_particulars", ["school_id"], name: "index_fee_collection_particulars_on_school_id",
-                                                         limit: { "school_id" => nil }
+  add_index "fee_collection_particulars", ["school_id"], name: "index_fee_collection_particulars_on_school_id"
 
   create_table "fee_discounts", force: :cascade do |t|
     t.string  "type"
@@ -1032,7 +988,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "fee_discounts", ["school_id"], name: "index_fee_discounts_on_school_id", limit: { "school_id" => nil }
+  add_index "fee_discounts", ["school_id"], name: "index_fee_discounts_on_school_id"
 
   create_table "finance_donations", force: :cascade do |t|
     t.string   "donor"
@@ -1045,8 +1001,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "finance_donations", ["school_id"], name: "index_finance_donations_on_school_id",
-                                                limit: { "school_id" => nil }
+  add_index "finance_donations", ["school_id"], name: "index_finance_donations_on_school_id"
 
   create_table "finance_fee_categories", force: :cascade do |t|
     t.string   "name"
@@ -1059,8 +1014,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "finance_fee_categories", ["school_id"], name: "index_finance_fee_categories_on_school_id",
-                                                     limit: { "school_id" => nil }
+  add_index "finance_fee_categories", ["school_id"], name: "index_finance_fee_categories_on_school_id"
 
   create_table "finance_fee_collections", force: :cascade do |t|
     t.string  "name"
@@ -1073,10 +1027,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "finance_fee_collections", ["fee_category_id"],
-            name: "index_finance_fee_collections_on_fee_category_id", limit: { "fee_category_id" => nil }
-  add_index "finance_fee_collections", ["school_id"], name: "index_finance_fee_collections_on_school_id",
-                                                      limit: { "school_id" => nil }
+  add_index "finance_fee_collections", ["fee_category_id"], name: "index_finance_fee_collections_on_fee_category_id"
+  add_index "finance_fee_collections", ["school_id"], name: "index_finance_fee_collections_on_school_id"
 
   create_table "finance_fee_particulars", force: :cascade do |t|
     t.string   "name"
@@ -1092,8 +1044,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "finance_fee_particulars", ["school_id"], name: "index_finance_fee_particulars_on_school_id",
-                                                      limit: { "school_id" => nil }
+  add_index "finance_fee_particulars", ["school_id"], name: "index_finance_fee_particulars_on_school_id"
 
   create_table "finance_fee_structure_elements", force: :cascade do |t|
     t.decimal "amount", precision: 15, scale: 2
@@ -1107,8 +1058,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "finance_fee_structure_elements", ["school_id"],
-            name: "index_finance_fee_structure_elements_on_school_id", limit: { "school_id" => nil }
+  add_index "finance_fee_structure_elements", ["school_id"], name: "index_finance_fee_structure_elements_on_school_id"
 
   create_table "finance_fees", force: :cascade do |t|
     t.integer "fee_collection_id"
@@ -1118,9 +1068,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "finance_fees", %w[fee_collection_id student_id],
-            name: "index_finance_fees_on_fee_collection_id_and_student_id", limit: { "student_id" => nil, "fee_collection_id" => nil }
-  add_index "finance_fees", ["school_id"], name: "index_finance_fees_on_school_id", limit: { "school_id" => nil }
+  add_index "finance_fees", %w[fee_collection_id student_id], name: "index_finance_fees_on_fee_collection_id_and_student_id"
+  add_index "finance_fees", ["school_id"], name: "index_finance_fees_on_school_id"
 
   create_table "finance_transaction_categories", force: :cascade do |t|
     t.string  "name"
@@ -1130,8 +1079,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "finance_transaction_categories", ["school_id"],
-            name: "index_finance_transaction_categories_on_school_id", limit: { "school_id" => nil }
+  add_index "finance_transaction_categories", ["school_id"], name: "index_finance_transaction_categories_on_school_id"
 
   create_table "finance_transaction_triggers", force: :cascade do |t|
     t.integer "finance_category_id"
@@ -1141,8 +1089,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "finance_transaction_triggers", ["school_id"], name: "index_finance_transaction_triggers_on_school_id",
-                                                           limit: { "school_id" => nil }
+  add_index "finance_transaction_triggers", ["school_id"], name: "index_finance_transaction_triggers_on_school_id"
 
   create_table "finance_transactions", force: :cascade do |t|
     t.string   "title"
@@ -1166,8 +1113,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "finance_transactions", ["school_id"], name: "index_finance_transactions_on_school_id",
-                                                   limit: { "school_id" => nil }
+  add_index "finance_transactions", ["school_id"], name: "index_finance_transactions_on_school_id"
 
   create_table "gallery_categories", force: :cascade do |t|
     t.string   "name"
@@ -1213,26 +1159,24 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.string   "description"
   end
 
-  add_index "grading_levels", %w[batch_id is_deleted], name: "index_grading_levels_on_batch_id_and_is_deleted",
-                                                       limit: { "batch_id" => nil, "is_deleted" => nil }
-  add_index "grading_levels", ["school_id"], name: "index_grading_levels_on_school_id", limit: { "school_id" => nil }
+  add_index "grading_levels", %w[batch_id is_deleted], name: "index_grading_levels_on_batch_id_and_is_deleted"
+  add_index "grading_levels", ["school_id"], name: "index_grading_levels_on_school_id"
 
   create_table "grn_items", force: :cascade do |t|
     t.integer  "grn_id"
     t.integer  "store_item_id"
     t.integer  "quantity"
-    t.integer  "unit_price",    limit: 10, precision: 10, scale: 0
-    t.integer  "tax",           limit: 10, precision: 10, scale: 0
+    t.decimal  "unit_price",    limit: 10, precision: 10, scale: 0
+    t.decimal  "tax",           limit: 10, precision: 10, scale: 0
     t.date     "expiry_date"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "school_id"
   end
 
-  add_index "grn_items", ["grn_id"], name: "index_grn_items_on_grn_id", limit: { "grn_id" => nil }
-  add_index "grn_items", ["school_id"], name: "index_grn_items_on_school_id", limit: { "school_id" => nil }
-  add_index "grn_items", ["store_item_id"], name: "index_grn_items_on_store_item_id",
-                                            limit: { "store_item_id" => nil }
+  add_index "grn_items", ["grn_id"], name: "index_grn_items_on_grn_id"
+  add_index "grn_items", ["school_id"], name: "index_grn_items_on_school_id"
+  add_index "grn_items", ["store_item_id"], name: "index_grn_items_on_store_item_id"
 
   create_table "grns", force: :cascade do |t|
     t.string   "grn_no"
@@ -1242,7 +1186,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.string   "invoice_no"
     t.date     "grn_date"
     t.date     "invoice_date"
-    t.integer  "other_chages", limit: 10, precision: 10, scale: 0
+    t.decimal  "other_charges", limit: 10, precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "supplier_type_id"
@@ -1250,14 +1194,12 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "finance_transaction_id"
   end
 
-  add_index "grns", ["finance_transaction_id"], name: "index_grns_on_finance_transaction_id",
-                                                limit: { "finance_transaction_id" => nil }
-  add_index "grns", ["purchase_order_id"], name: "index_grns_on_purchase_order_id",
-                                           limit: { "purchase_order_id" => nil }
-  add_index "grns", ["school_id"], name: "index_grns_on_school_id", limit: { "school_id" => nil }
-  add_index "grns", ["store_id"], name: "index_grns_on_store_id", limit: { "store_id" => nil }
-  add_index "grns", ["supplier_id"], name: "index_grns_on_supplier_id", limit: { "supplier_id" => nil }
-  add_index "grns", ["supplier_type_id"], name: "index_grns_on_supplier_type_id", limit: { "supplier_type_id" => nil }
+  add_index "grns", ["finance_transaction_id"], name: "index_grns_on_finance_transaction_id"
+  add_index "grns", ["purchase_order_id"], name: "index_grns_on_purchase_order_id"
+  add_index "grns", ["school_id"], name: "index_grns_on_school_id"
+  add_index "grns", ["store_id"], name: "index_grns_on_store_id"
+  add_index "grns", ["supplier_id"], name: "index_grns_on_supplier_id"
+  add_index "grns", ["supplier_type_id"], name: "index_grns_on_supplier_type_id"
 
   create_table "group_files", force: :cascade do |t|
     t.integer  "group_id"
@@ -1308,8 +1250,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "grouped_batches", ["batch_group_id"], name: "index_grouped_batches_on_batch_group_id",
-                                                   limit: { "batch_group_id" => nil }
+  add_index "grouped_batches", ["batch_group_id"], name: "index_grouped_batches_on_batch_group_id"
 
   create_table "grouped_exam_reports", force: :cascade do |t|
     t.integer  "batch_id"
@@ -1322,8 +1263,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "grouped_exam_reports", %w[batch_id student_id score_type],
-            name: "by_batch_student_and_score_type", limit: { "batch_id" => nil, "score_type" => nil, "student_id" => nil }
+  add_index "grouped_exam_reports", %w[batch_id student_id score_type], name: "by_batch_student_and_score_type"
 
   create_table "grouped_exams", force: :cascade do |t|
     t.integer "exam_group_id"
@@ -1332,8 +1272,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.decimal "weightage", precision: 15, scale: 2
   end
 
-  add_index "grouped_exams", ["batch_id"], name: "index_grouped_exams_on_batch_id", limit: { "batch_id" => nil }
-  add_index "grouped_exams", ["school_id"], name: "index_grouped_exams_on_school_id", limit: { "school_id" => nil }
+  add_index "grouped_exams", ["batch_id"], name: "index_grouped_exams_on_batch_id"
+  add_index "grouped_exams", ["school_id"], name: "index_grouped_exams_on_school_id"
 
   create_table "groups", force: :cascade do |t|
     t.string   "group_name"
@@ -1378,7 +1318,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "user_id"
   end
 
-  add_index "guardians", ["school_id"], name: "index_guardians_on_school_id", limit: { "school_id" => nil }
+  add_index "guardians", ["school_id"], name: "index_guardians_on_school_id"
 
   create_table "hostel_fee_collections", force: :cascade do |t|
     t.string   "name"
@@ -1420,17 +1360,16 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "pending"
     t.integer  "issued"
     t.string   "issued_type"
-    t.integer  "price", limit: 10, precision: 10, scale: 0
+    t.decimal  "price", limit: 10, precision: 10, scale: 0
     t.integer  "required"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "school_id"
   end
 
-  add_index "indent_items", ["indent_id"], name: "index_indent_items_on_indent_id", limit: { "indent_id" => nil }
-  add_index "indent_items", ["school_id"], name: "index_indent_items_on_school_id", limit: { "school_id" => nil }
-  add_index "indent_items", ["store_item_id"], name: "index_indent_items_on_store_item_id",
-                                               limit: { "store_item_id" => nil }
+  add_index "indent_items", ["indent_id"], name: "index_indent_items_on_indent_id"
+  add_index "indent_items", ["school_id"], name: "index_indent_items_on_school_id"
+  add_index "indent_items", ["store_item_id"], name: "index_indent_items_on_store_item_id"
 
   create_table "indents", force: :cascade do |t|
     t.integer  "user_id"
@@ -1446,11 +1385,10 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "indents", ["employee_department_id"], name: "index_indents_on_employee_department_id",
-                                                   limit: { "employee_department_id" => nil }
-  add_index "indents", ["school_id"], name: "index_indents_on_school_id", limit: { "school_id" => nil }
-  add_index "indents", ["store_id"], name: "index_indents_on_store_id", limit: { "store_id" => nil }
-  add_index "indents", ["user_id"], name: "index_indents_on_user_id", limit: { "user_id" => nil }
+  add_index "indents", ["employee_department_id"], name: "index_indents_on_employee_department_id"
+  add_index "indents", ["school_id"], name: "index_indents_on_school_id"
+  add_index "indents", ["store_id"], name: "index_indents_on_store_id"
+  add_index "indents", ["user_id"], name: "index_indents_on_user_id"
 
   create_table "individual_payslip_categories", force: :cascade do |t|
     t.integer "employee_id"
@@ -1462,8 +1400,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "individual_payslip_categories", ["school_id"],
-            name: "index_individual_payslip_categories_on_school_id", limit: { "school_id" => nil }
+  add_index "individual_payslip_categories", ["school_id"], name: "index_individual_payslip_categories_on_school_id"
 
   create_table "instant_fee_categories", force: :cascade do |t|
     t.string   "name"
@@ -1526,7 +1463,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "liabilities", ["school_id"], name: "index_liabilities_on_school_id", limit: { "school_id" => nil }
+  add_index "liabilities", ["school_id"], name: "index_liabilities_on_school_id"
 
   create_table "library_card_settings", force: :cascade do |t|
     t.integer  "course_id"
@@ -1558,8 +1495,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.string  "remark"
   end
 
-  add_index "monthly_payslips", ["school_id"], name: "index_monthly_payslips_on_school_id",
-                                               limit: { "school_id" => nil }
+  add_index "monthly_payslips", ["school_id"], name: "index_monthly_payslips_on_school_id"
 
   create_table "news", force: :cascade do |t|
     t.string   "title"
@@ -1570,7 +1506,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "news", ["school_id"], name: "index_news_on_school_id", limit: { "school_id" => nil }
+  add_index "news", ["school_id"], name: "index_news_on_school_id"
 
   create_table "news_comments", force: :cascade do |t|
     t.text     "content"
@@ -1582,7 +1518,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.boolean  "is_approved", default: false
   end
 
-  add_index "news_comments", ["school_id"], name: "index_news_comments_on_school_id", limit: { "school_id" => nil }
+  add_index "news_comments", ["school_id"], name: "index_news_comments_on_school_id"
 
   create_table "online_exam_attendances", force: :cascade do |t|
     t.integer  "online_exam_group_id"
@@ -1670,12 +1606,9 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "online_meeting_rooms", ["meetingid"], name: "index_online_meeting_rooms_on_meetingid", unique: true,
-                                                   limit: { "meetingid" => nil }
-  add_index "online_meeting_rooms", ["server_id"], name: "index_online_meeting_rooms_on_server_id",
-                                                   limit: { "server_id" => nil }
-  add_index "online_meeting_rooms", ["voice_bridge"], name: "index_online_meeting_rooms_on_voice_bridge",
-                                                      unique: true, limit: { "voice_bridge" => nil }
+  add_index "online_meeting_rooms", ["meetingid"], name: "index_online_meeting_rooms_on_meetingid", unique: true
+  add_index "online_meeting_rooms", ["server_id"], name: "index_online_meeting_rooms_on_server_id"
+  add_index "online_meeting_rooms", ["voice_bridge"], name: "index_online_meeting_rooms_on_voice_bridge", unique: true
 
   create_table "online_meeting_servers", force: :cascade do |t|
     t.string   "name"
@@ -1697,8 +1630,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "payroll_categories", ["school_id"], name: "index_payroll_categories_on_school_id",
-                                                 limit: { "school_id" => nil }
+  add_index "payroll_categories", ["school_id"], name: "index_payroll_categories_on_school_id"
 
   create_table "period_entries", force: :cascade do |t|
     t.date    "month_date"
@@ -1709,9 +1641,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "period_entries", %w[month_date batch_id], name: "index_period_entries_on_month_date_and_batch_id",
-                                                       limit: { "batch_id" => nil, "month_date" => nil }
-  add_index "period_entries", ["school_id"], name: "index_period_entries_on_school_id", limit: { "school_id" => nil }
+  add_index "period_entries", %w[month_date batch_id], name: "index_period_entries_on_month_date_and_batch_id"
+  add_index "period_entries", ["school_id"], name: "index_period_entries_on_school_id"
 
   create_table "placement_registrations", force: :cascade do |t|
     t.integer  "student_id"
@@ -1790,7 +1721,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "privileges", ["school_id"], name: "index_privileges_on_school_id", limit: { "school_id" => nil }
+  add_index "privileges", ["school_id"], name: "index_privileges_on_school_id"
 
   create_table "privileges_users", id: false, force: :cascade do |t|
     t.integer "user_id"
@@ -1798,9 +1729,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "privileges_users", ["school_id"], name: "index_privileges_users_on_school_id",
-                                               limit: { "school_id" => nil }
-  add_index "privileges_users", ["user_id"], name: "index_privileges_users_on_user_id", limit: { "user_id" => nil }
+  add_index "privileges_users", ["school_id"], name: "index_privileges_users_on_school_id"
+  add_index "privileges_users", ["user_id"], name: "index_privileges_users_on_user_id"
 
   create_table "purchase_items", force: :cascade do |t|
     t.integer  "purchase_order_id"
@@ -1812,15 +1742,13 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "school_id"
-    t.integer  "unit_price", limit: 10, precision: 10, scale: 0
+    t.decimal  "unit_price", limit: 10, precision: 10, scale: 0
   end
 
-  add_index "purchase_items", ["purchase_order_id"], name: "index_purchase_items_on_purchase_order_id",
-                                                     limit: { "purchase_order_id" => nil }
-  add_index "purchase_items", ["school_id"], name: "index_purchase_items_on_school_id", limit: { "school_id" => nil }
-  add_index "purchase_items", ["store_item_id"], name: "index_purchase_items_on_store_item_id",
-                                                 limit: { "store_item_id" => nil }
-  add_index "purchase_items", ["user_id"], name: "index_purchase_items_on_user_id", limit: { "user_id" => nil }
+  add_index "purchase_items", ["purchase_order_id"], name: "index_purchase_items_on_purchase_order_id"
+  add_index "purchase_items", ["school_id"], name: "index_purchase_items_on_school_id"
+  add_index "purchase_items", ["store_item_id"], name: "index_purchase_items_on_store_item_id"
+  add_index "purchase_items", ["user_id"], name: "index_purchase_items_on_user_id"
 
   create_table "purchase_orders", force: :cascade do |t|
     t.string   "po_no"
@@ -1836,15 +1764,11 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "purchase_orders", ["indent_id"], name: "index_purchase_orders_on_indent_id",
-                                              limit: { "indent_id" => nil }
-  add_index "purchase_orders", ["school_id"], name: "index_purchase_orders_on_school_id",
-                                              limit: { "school_id" => nil }
-  add_index "purchase_orders", ["store_id"], name: "index_purchase_orders_on_store_id", limit: { "store_id" => nil }
-  add_index "purchase_orders", ["supplier_id"], name: "index_purchase_orders_on_supplier_id",
-                                                limit: { "supplier_id" => nil }
-  add_index "purchase_orders", ["supplier_type_id"], name: "index_purchase_orders_on_supplier_type_id",
-                                                     limit: { "supplier_type_id" => nil }
+  add_index "purchase_orders", ["indent_id"], name: "index_purchase_orders_on_indent_id"
+  add_index "purchase_orders", ["school_id"], name: "index_purchase_orders_on_school_id"
+  add_index "purchase_orders", ["store_id"], name: "index_purchase_orders_on_store_id"
+  add_index "purchase_orders", ["supplier_id"], name: "index_purchase_orders_on_supplier_id"
+  add_index "purchase_orders", ["supplier_type_id"], name: "index_purchase_orders_on_supplier_type_id"
 
   create_table "questions", force: :cascade do |t|
     t.integer  "registration_id"
@@ -1874,10 +1798,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "registration_courses", ["course_id"], name: "index_registration_courses_on_course_id",
-                                                   limit: { "course_id" => nil }
-  add_index "registration_courses", ["school_id"], name: "index_registration_courses_on_school_id",
-                                                   limit: { "school_id" => nil }
+  add_index "registration_courses", ["course_id"], name: "index_registration_courses_on_course_id"
+  add_index "registration_courses", ["school_id"], name: "index_registration_courses_on_school_id"
 
   create_table "registration_details", force: :cascade do |t|
     t.integer  "registration_id"
@@ -1932,8 +1854,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "reminders", ["recipient"], name: "index_reminders_on_recipient", limit: { "recipient" => nil }
-  add_index "reminders", ["school_id"], name: "index_reminders_on_school_id", limit: { "school_id" => nil }
+  add_index "reminders", ["recipient"], name: "index_reminders_on_recipient"
+  add_index "reminders", ["school_id"], name: "index_reminders_on_school_id"
 
   create_table "report_columns", force: :cascade do |t|
     t.integer  "report_id"
@@ -1945,7 +1867,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "report_columns", ["report_id"], name: "index_report_columns_on_report_id", limit: { "report_id" => nil }
+  add_index "report_columns", ["report_id"], name: "index_report_columns_on_report_id"
 
   create_table "report_queries", force: :cascade do |t|
     t.integer  "report_id"
@@ -1959,7 +1881,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "report_queries", ["report_id"], name: "index_report_queries_on_report_id", limit: { "report_id" => nil }
+  add_index "report_queries", ["report_id"], name: "index_report_queries_on_report_id"
 
   create_table "reports", force: :cascade do |t|
     t.string   "name"
@@ -2043,7 +1965,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "sms_settings", ["school_id"], name: "index_sms_settings_on_school_id", limit: { "school_id" => nil }
+  add_index "sms_settings", ["school_id"], name: "index_sms_settings_on_school_id"
 
   create_table "store_categories", force: :cascade do |t|
     t.string   "name"
@@ -2053,22 +1975,21 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "store_categories", ["school_id"], name: "index_store_categories_on_school_id",
-                                               limit: { "school_id" => nil }
+  add_index "store_categories", ["school_id"], name: "index_store_categories_on_school_id"
 
   create_table "store_items", force: :cascade do |t|
     t.integer  "store_id"
     t.string   "item_name"
     t.integer  "quantity"
-    t.integer  "unit_price", limit: 10, precision: 10, scale: 0
-    t.integer  "tax",        limit: 10, precision: 10, scale: 0
+    t.decimal  "unit_price", limit: 10, precision: 10, scale: 0
+    t.decimal  "tax",        limit: 10, precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "school_id"
   end
 
-  add_index "store_items", ["school_id"], name: "index_store_items_on_school_id", limit: { "school_id" => nil }
-  add_index "store_items", ["store_id"], name: "index_store_items_on_store_id", limit: { "store_id" => nil }
+  add_index "store_items", ["school_id"], name: "index_store_items_on_school_id"
+  add_index "store_items", ["store_id"], name: "index_store_items_on_store_id"
 
   create_table "store_types", force: :cascade do |t|
     t.string   "name"
@@ -2078,7 +1999,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "store_types", ["school_id"], name: "index_store_types_on_school_id", limit: { "school_id" => nil }
+  add_index "store_types", ["school_id"], name: "index_store_types_on_school_id"
 
   create_table "stores", force: :cascade do |t|
     t.integer  "store_type_id"
@@ -2090,10 +2011,9 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "stores", ["school_id"], name: "index_stores_on_school_id", limit: { "school_id" => nil }
-  add_index "stores", ["store_category_id"], name: "index_stores_on_store_category_id",
-                                             limit: { "store_category_id" => nil }
-  add_index "stores", ["store_type_id"], name: "index_stores_on_store_type_id", limit: { "store_type_id" => nil }
+  add_index "stores", ["school_id"], name: "index_stores_on_school_id"
+  add_index "stores", ["store_category_id"], name: "index_stores_on_store_category_id"
+  add_index "stores", ["store_type_id"], name: "index_stores_on_store_type_id"
 
   create_table "streams", force: :cascade do |t|
     t.string   "name"
@@ -2108,8 +2028,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "student_additional_details", ["school_id"], name: "index_student_additional_details_on_school_id",
-                                                         limit: { "school_id" => nil }
+  add_index "student_additional_details", ["school_id"], name: "index_student_additional_details_on_school_id"
 
   create_table "student_additional_fields", force: :cascade do |t|
     t.string  "name"
@@ -2117,8 +2036,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "student_additional_fields", ["school_id"], name: "index_student_additional_fields_on_school_id",
-                                                        limit: { "school_id" => nil }
+  add_index "student_additional_fields", ["school_id"], name: "index_student_additional_fields_on_school_id"
 
   create_table "student_categories", force: :cascade do |t|
     t.string  "name"
@@ -2126,8 +2044,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "student_categories", ["school_id"], name: "index_student_categories_on_school_id",
-                                                 limit: { "school_id" => nil }
+  add_index "student_categories", ["school_id"], name: "index_student_categories_on_school_id"
 
   create_table "student_previous_datas", force: :cascade do |t|
     t.integer "student_id"
@@ -2138,8 +2055,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "student_previous_datas", ["school_id"], name: "index_student_previous_datas_on_school_id",
-                                                     limit: { "school_id" => nil }
+  add_index "student_previous_datas", ["school_id"], name: "index_student_previous_datas_on_school_id"
 
   create_table "student_previous_subject_marks", force: :cascade do |t|
     t.integer "student_id"
@@ -2148,8 +2064,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "student_previous_subject_marks", ["school_id"],
-            name: "index_student_previous_subject_marks_on_school_id", limit: { "school_id" => nil }
+  add_index "student_previous_subject_marks", ["school_id"], name: "index_student_previous_subject_marks_on_school_id"
 
   create_table "students", force: :cascade do |t|
     t.string   "admission_no"
@@ -2195,11 +2110,11 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "students", ["admission_no"], name: "index_students_on_admission_no", limit: { "admission_no" => "10" }
-  add_index "students", ["batch_id"], name: "index_students_on_batch_id", limit: { "batch_id" => nil }
+  add_index "students", ["admission_no"], name: "index_students_on_admission_no"
+  add_index "students", ["batch_id"], name: "index_students_on_batch_id"
   add_index "students", %w[first_name middle_name last_name],
-            name: "index_students_on_first_name_and_middle_name_and_last_name", limit: { "middle_name" => "10", "last_name" => "10", "first_name" => "10" }
-  add_index "students", ["school_id"], name: "index_students_on_school_id", limit: { "school_id" => nil }
+            name: "index_students_on_first_name_and_middle_name_and_last_name"
+  add_index "students", ["school_id"], name: "index_students_on_school_id"
 
   create_table "students_subjects", force: :cascade do |t|
     t.integer "student_id"
@@ -2208,10 +2123,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "school_id"
   end
 
-  add_index "students_subjects", ["school_id"], name: "index_students_subjects_on_school_id",
-                                                limit: { "school_id" => nil }
-  add_index "students_subjects", %w[student_id subject_id],
-            name: "index_students_subjects_on_student_id_and_subject_id", limit: { "student_id" => nil, "subject_id" => nil }
+  add_index "students_subjects", ["school_id"], name: "index_students_subjects_on_school_id"
+  add_index "students_subjects", %w[student_id subject_id], name: "index_students_subjects_on_student_id_and_subject_id"
 
   create_table "subject_choices", force: :cascade do |t|
     t.integer  "registration_id"
@@ -2233,9 +2146,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "subject_leaves", %w[month_date subject_id batch_id],
-            name: "index_subject_leaves_on_month_date_and_subject_id_and_batch_id", limit: { "batch_id" => nil, "subject_id" => nil, "month_date" => nil }
-  add_index "subject_leaves", %w[student_id batch_id], name: "index_subject_leaves_on_student_id_and_batch_id",
-                                                       limit: { "batch_id" => nil, "student_id" => nil }
+            name: "index_subject_leaves_on_month_date_and_subject_id_and_batch_id"
+  add_index "subject_leaves", %w[student_id batch_id], name: "index_subject_leaves_on_student_id_and_batch_id"
 
   create_table "subjects", force: :cascade do |t|
     t.string   "name"
@@ -2255,8 +2167,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
   end
 
   add_index "subjects", %w[batch_id elective_group_id is_deleted],
-            name: "index_subjects_on_batch_id_and_elective_group_id_and_is_deleted", limit: { "batch_id" => nil, "is_deleted" => nil, "elective_group_id" => nil }
-  add_index "subjects", ["school_id"], name: "index_subjects_on_school_id", limit: { "school_id" => nil }
+            name: "index_subjects_on_batch_id_and_elective_group_id_and_is_deleted"
+  add_index "subjects", ["school_id"], name: "index_subjects_on_school_id"
 
   create_table "supplier_types", force: :cascade do |t|
     t.string   "name"
@@ -2266,7 +2178,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "supplier_types", ["school_id"], name: "index_supplier_types_on_school_id", limit: { "school_id" => nil }
+  add_index "supplier_types", ["school_id"], name: "index_supplier_types_on_school_id"
 
   create_table "suppliers", force: :cascade do |t|
     t.string   "name"
@@ -2281,9 +2193,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "suppliers", ["school_id"], name: "index_suppliers_on_school_id", limit: { "school_id" => nil }
-  add_index "suppliers", ["supplier_type_id"], name: "index_suppliers_on_supplier_type_id",
-                                               limit: { "supplier_type_id" => nil }
+  add_index "suppliers", ["school_id"], name: "index_suppliers_on_school_id"
+  add_index "suppliers", ["supplier_type_id"], name: "index_suppliers_on_supplier_type_id"
 
   create_table "sync_updates", force: :cascade do |t|
     t.string   "changed_record_type"
@@ -2300,9 +2211,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id", limit: { "tag_id" => nil }
-  add_index "taggings", %w[taggable_id taggable_type], name: "index_taggings_on_taggable_id_and_taggable_type",
-                                                       limit: { "taggable_id" => nil, "taggable_type" => nil }
+  add_index "taggings", ["tag_id"], name: "index_taggings_on_tag_id"
+  add_index "taggings", %w[taggable_id taggable_type], name: "index_taggings_on_taggable_id_and_taggable_type"
 
   create_table "tags", force: :cascade do |t|
     t.string  "name"
@@ -2360,10 +2270,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer "timetable_id"
   end
 
-  add_index "timetable_entries", ["school_id"], name: "index_timetable_entries_on_school_id",
-                                                limit: { "school_id" => nil }
-  add_index "timetable_entries", ["timetable_id"], name: "index_timetable_entries_on_timetable_id",
-                                                   limit: { "timetable_id" => nil }
+  add_index "timetable_entries", ["school_id"], name: "index_timetable_entries_on_school_id"
+  add_index "timetable_entries", ["timetable_id"], name: "index_timetable_entries_on_timetable_id"
 
   create_table "timetables", force: :cascade do |t|
     t.date     "start_date"
@@ -2373,8 +2281,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.datetime "updated_at"
   end
 
-  add_index "timetables", %w[start_date end_date], name: "by_start_and_end",
-                                                   limit: { "end_date" => nil, "start_date" => nil }
+  add_index "timetables", %w[start_date end_date], name: "by_start_and_end"
 
   create_table "transport_fee_collections", force: :cascade do |t|
     t.string  "name"
@@ -2416,7 +2323,7 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.integer  "school_id"
   end
 
-  add_index "user_events", ["school_id"], name: "index_user_events_on_school_id", limit: { "school_id" => nil }
+  add_index "user_events", ["school_id"], name: "index_user_events_on_school_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username"
@@ -2436,8 +2343,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.boolean  "parent"
   end
 
-  add_index "users", ["school_id"], name: "index_users_on_school_id", limit: { "school_id" => nil }
-  add_index "users", ["username"], name: "index_users_on_username", limit: { "username" => "10" }
+  add_index "users", ["school_id"], name: "index_users_on_school_id"
+  add_index "users", ["username"], name: "index_users_on_username"
 
   create_table "vehicles", force: :cascade do |t|
     t.string   "vehicle_no"
@@ -2467,8 +2374,8 @@ ActiveRecord::Schema[7.0].define(version: 20_220_516_225_036) do
     t.boolean "is_deleted", default: false
   end
 
-  add_index "weekdays", ["batch_id"], name: "index_weekdays_on_batch_id", limit: { "batch_id" => nil }
-  add_index "weekdays", ["school_id"], name: "index_weekdays_on_school_id", limit: { "school_id" => nil }
+  add_index "weekdays", ["batch_id"], name: "index_weekdays_on_batch_id"
+  add_index "weekdays", ["school_id"], name: "index_weekdays_on_school_id"
 
   create_table "xmls", force: :cascade do |t|
     t.string   "finance_name"
