@@ -52,7 +52,7 @@ gem "bootsnap", require: false
 gem "rails-erd"
 
 # Use devise for authentication
-gem "devise"
+# gem "devise"
 
 # Use pundit for authorization
 gem "pundit"
@@ -76,6 +76,9 @@ group :development, :test do
 
   # Use annotate to describe schema
   gem "annotate"
+
+  # Use letter_opener for reading mails in development
+  gem "letter_opener"
 end
 
 group :development do
