@@ -57,10 +57,6 @@ gem "rails-erd"
 # Use pundit for authorization
 gem "pundit"
 
-# Use rubocop rails to ensure compliance with Ruby/Rails community guidelines
-gem "rubocop-rails", require: false
-
-
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
@@ -71,6 +67,9 @@ group :development, :test do
   # Use factory_bot_rails for generating factories
   gem "factory_bot_rails"
 
+  # Use shoulda-matchers for oneliner model specs
+  gem "shoulda-matchers"
+
   # Use simple_cov for reporting code/test coverage
   gem "simplecov", require: false
 
@@ -79,6 +78,14 @@ group :development, :test do
 
   # Use letter_opener for reading mails in development
   gem "letter_opener"
+
+ # Security tools: Use brakeman as vulnerability scanner
+  gem "brakeman"
+  gem "ruby_audit"
+
+ # Linter tools: Use rubocop-rails for enforcing coding standards in Ruby/Rails
+  gem "rubocop-rails", require: false
+  gem "rubocop"
 end
 
 group :development do
