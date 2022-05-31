@@ -71,6 +71,9 @@ group :development, :test do
   # Use factory_bot_rails for generating factories
   gem "factory_bot_rails"
 
+  # Add shoulda-matchers for model testing
+  gem "shoulda-matchers"
+
   # Use simple_cov for reporting code/test coverage
   gem "simplecov", require: false
 
