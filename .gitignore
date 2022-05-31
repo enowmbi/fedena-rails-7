@@ -13,9 +13,6 @@
 !/log/.keep
 !/tmp/.keep
 
-# Ignore coverage files
-/coverage/*
-
 # Ignore pidfiles, but keep the directory.
 /tmp/pids/*
 !/tmp/pids/
@@ -27,6 +24,9 @@
 /tmp/storage/*
 !/tmp/storage/
 !/tmp/storage/.keep
+
+# Ignore coverage files
+coverage/*
 
 /public/assets
 
